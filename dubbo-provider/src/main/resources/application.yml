@@ -1,0 +1,33 @@
+server:
+  port: 8087
+
+dubbo:
+  application:
+    name: dubbo-springboot-provider
+  # \u5E94\u7528\u6240\u5C5E\u8005
+  owner: Jessy Heung
+  # \u5E94\u7528\u6240\u5C5E\u7EC4\u7EC7
+  organization: Jessy Heung
+  registry:
+    id: zookeeper-registry
+    # \u6CE8\u518C\u4E2D\u5FC3\u534F\u8BAE
+    protocol: zookeeper
+    # \u6CE8\u518C\u4E2D\u5FC3\u5730\u5740
+    address: zookeeper://127.0.0.1:2181
+
+  # dubbo\u534F\u8BAE\u572820880\u7AEF\u53E3\u66B4\u9732\u670D\u52A1
+  # \u534F\u8BAE\u540D\u79F0
+  protocol:
+    name: dubbo
+    # \u534F\u8BAE\u7AEF\u53E3
+    port: 20880
+    # \u534F\u8BAE\u8BBF\u95EElog
+    accesslog: dubbo-access.log
+  # \u91CD\u8BD5\u6B21\u6570
+  provider:
+    retries: 0
+    # \u8D85\u65F6\u65F6\u95F4
+    timeout: 3000
+  # \u6CE8\u518C\u76D1\u63A7\u4E2D\u5FC3
+  monitor:
+    protocol: registry
